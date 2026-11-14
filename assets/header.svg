@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#151a35"/>
+    </linearGradient>
+    <linearGradient id="gBronze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e09a5a"/><stop offset="1" stop-color="#9a5a22"/>
+    </linearGradient>
+    <linearGradient id="gSilver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6ebf0"/><stop offset="1" stop-color="#8a96a3"/>
+    </linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#c9971a"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#30363d"/>
+    </pattern>
+    <clipPath id="typeClip">
+      <rect x="40" y="88" width="0" height="30">
+        <animate attributeName="width" values="0;680;680;0" keyTimes="0;0.35;0.9;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+    <style>
+      .title{font:700 36px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#e6edf3}
+      .accent{fill:#ffd23f}
+      .sub{font:500 18px 'Cascadia Code','Fira Code',Consolas,monospace;fill:#7ee787}
+      .loc{font:400 13px 'Segoe UI',Ubuntu,Arial,sans-serif;fill:#8b949e}
+      .node{font:700 14px 'Segoe UI',Ubuntu,Arial,sans-serif;text-anchor:middle}
+      .cap{font:400 11px 'Segoe UI',Ubuntu,Arial,sans-serif;fill:#8b949e;text-anchor:middle}
+      .wave{transform-origin:432px 52px;animation:wave 2.4s ease-in-out infinite}
+      @keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-8deg)}}
+      .glow{animation:glow 2.5s ease-in-out infinite}
+      @keyframes glow{0%,100%{opacity:.35}50%{opacity:.9}}
+    </style>
+  </defs>
+
+  <rect width="900" height="300" rx="16" fill="url(#bg)"/>
+  <rect width="900" height="300" rx="16" fill="url(#dots)" opacity=".6"/>
+
+  <!-- Header text -->
+  <text x="40" y="62" class="title">Olá, eu sou o <tspan class="accent">Gabriel</tspan></text>
+  <g class="wave">
+    <!-- simple waving hand -->
+    <g transform="translate(418 30)">
+      <rect x="4" y="12" width="20" height="22" rx="8" fill="#ffcf8a"/>
+      <rect x="4" y="2" width="5" height="16" rx="2.5" fill="#ffcf8a"/>
+      <rect x="10" y="0" width="5" height="16" rx="2.5" fill="#ffcf8a"/>
+      <rect x="16" y="2" width="5" height="16" rx="2.5" fill="#ffcf8a"/>
+      <rect x="-3" y="15" width="12" height="5" rx="2.5" fill="#ffcf8a" transform="rotate(-35 3 17)"/>
+    </g>
+  </g>
+
+  <g clip-path="url(#typeClip)">
+    <text x="40" y="110" class="sub">&gt; Data Engineer · Analytics Engineering · Integrations_</text>
+  </g>
+  <text x="40" y="140" class="loc">Varginha, MG · Brasil   |   Python · SQL · dbt · DuckDB · Cloud</text>
+
+  <!-- Pipeline line -->
+  <path id="flow" d="M150 205 L710 205" stroke="#30363d" stroke-width="3" stroke-dasharray="6 6" fill="none">
+    <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Data packets (drawn before nodes so they pass "through" them) -->
+  <g>
+    <circle r="6" fill="#8b949e">
+      <animateMotion dur="4s" begin="0s" repeatCount="indefinite" path="M150 205 L710 205"/>
+      <animate attributeName="fill" calcMode="discrete" values="#8b949e;#e09a5a;#e6ebf0;#ffd23f" keyTimes="0;0.2;0.5;0.8" dur="4s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="6" fill="#8b949e">
+      <animateMotion dur="4s" begin="-1s" repeatCount="indefinite" path="M150 205 L710 205"/>
+      <animate attributeName="fill" calcMode="discrete" values="#8b949e;#e09a5a;#e6ebf0;#ffd23f" keyTimes="0;0.2;0.5;0.8" dur="4s" begin="-1s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="6" fill="#8b949e">
+      <animateMotion dur="4s" begin="-2s" repeatCount="indefinite" path="M150 205 L710 205"/>
+      <animate attributeName="fill" calcMode="discrete" values="#8b949e;#e09a5a;#e6ebf0;#ffd23f" keyTimes="0;0.2;0.5;0.8" dur="4s" begin="-2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="6" fill="#8b949e">
+      <animateMotion dur="4s" begin="-3s" repeatCount="indefinite" path="M150 205 L710 205"/>
+      <animate attributeName="fill" calcMode="discrete" values="#8b949e;#e09a5a;#e6ebf0;#ffd23f" keyTimes="0;0.2;0.5;0.8" dur="4s" begin="-3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Nodes -->
+  <g>
+    <rect x="30" y="180" width="120" height="50" rx="10" fill="#21262d" stroke="#484f58"/>
+    <text x="90" y="210" class="node" fill="#c9d1d9">Fontes</text>
+    <text x="90" y="250" class="cap">APIs · CNPJ · CSV</text>
+
+    <rect x="200" y="180" width="120" height="50" rx="10" fill="url(#gBronze)"/>
+    <text x="260" y="210" class="node" fill="#2b1608">Bronze</text>
+    <text x="260" y="250" class="cap">dado bruto</text>
+
+    <rect x="370" y="180" width="120" height="50" rx="10" fill="url(#gSilver)"/>
+    <text x="430" y="210" class="node" fill="#1f2630">Silver</text>
+    <text x="430" y="250" class="cap">limpo · validado</text>
+
+    <rect x="540" y="180" width="120" height="50" rx="10" fill="url(#gGold)"/>
+    <text x="600" y="210" class="node" fill="#3a2a00">Gold</text>
+    <text x="600" y="250" class="cap">regras de negócio</text>
+
+    <rect x="702" y="172" width="136" height="66" rx="14" fill="#ffd23f" class="glow"/>
+    <rect x="710" y="180" width="120" height="50" rx="10" fill="#21262d" stroke="#ffd23f"/>
+    <!-- tiny bar chart -->
+    <rect x="732" y="208" width="8" height="12" rx="1" fill="#7ee787">
+      <animate attributeName="height" values="12;20;12" dur="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="208;200;208" dur="1.6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="744" y="198" width="8" height="22" rx="1" fill="#58a6ff">
+      <animate attributeName="height" values="22;14;22" dur="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="198;206;198" dur="1.6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="756" y="203" width="8" height="17" rx="1" fill="#ffd23f">
+      <animate attributeName="height" values="17;24;17" dur="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="203;196;203" dur="1.6s" repeatCount="indefinite"/>
+    </rect>
+    <text x="796" y="210" class="node" fill="#e6edf3" style="font-size:13px">Insights</text>
+    <text x="770" y="250" class="cap">dashboards · IA</text>
+  </g>
+
+  <!-- Ground -->
+  <line x1="0" y1="288" x2="900" y2="288" stroke="#21262d" stroke-width="2"/>
+
+  <!-- Duck mascot walking -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="-70 0;960 0" dur="14s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="0.45s" repeatCount="indefinite"/>
+      <!-- feet -->
+      <rect x="14" y="282" width="7" height="5" rx="2" fill="#f28c28"/>
+      <rect x="26" y="282" width="7" height="5" rx="2" fill="#f28c28"/>
+      <!-- body -->
+      <ellipse cx="24" cy="270" rx="18" ry="13" fill="#ffd23f"/>
+      <!-- wing -->
+      <ellipse cx="20" cy="270" rx="9" ry="6" fill="#f2bf1d">
+        <animateTransform attributeName="transform" type="rotate" values="0 26 268;-14 26 268;0 26 268" dur="0.45s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- head -->
+      <circle cx="38" cy="252" r="10" fill="#ffd23f"/>
+      <circle cx="41" cy="249" r="2" fill="#0d1117"/>
+      <path d="M46 252 L56 254 L46 257 Z" fill="#f28c28"/>
+    </g>
+  </g>
+</svg>
